@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hopscotch</title>
+  <link rel="stylesheet" href="../bower_components/hopscotch/dist/css/hopscotch.css">
+  <link rel="stylesheet" href="../dist/stylesheets/_hopscotch-highlight.css">
+  <style type="text/css">
+    main {
+      width: 860px;
+      margin: 0 auto;
+    }
+
+    #header,
+    #intro,
+    th, td {
+      background-color: #fff;
+    }
+
+    th {
+
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+  </style>
+</head>
+
+<body>
+
+<main>
+
+  <h1><span id="header">H</span>eader</h1>
+
+  <p id="intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas molestie quam nec augue porttitor elementum. Phasellus sit amet arcu eu dui convallis consequat vitae a purus. Sed consectetur gravida accumsan. Maecenas massa nisi, sodales quis varius nec, ultricies id dolor. Morbi eros sem, feugiat sed laoreet in, hendrerit eu quam. Duis et ipsum erat, non pretium tortor. Nulla mauris risus, vulputate ut pretium vitae, laoreet non turpis. Integer varius, est eu pretium fermentum, risus neque viverra lectus, vitae ornare metus ante elementum nibh. Suspendisse vel volutpat turpis. Mauris erat massa, consequat vel consequat at, mattis ac justo. Vivamus varius volutpat rhoncus.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Position</th>
+        <th id="office">Office</th>
+        <th>Age</th>
+        <th>Start date</th>
+        <th>Salary</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr role="row" class="odd">
+        <td class="sorting_1">Airi Satou</td>
+        <td>Accountant</td>
+        <td>Tokyo</td>
+        <td>33</td>
+        <td>2008/11/28</td>
+        <td>$162,700</td>
+      </tr>
+      <tr role="row" class="even">
+        <td class="sorting_1">Angelica Ramos</td>
+        <td>Chief Executive Officer (CEO)</td>
+        <td>London</td>
+        <td>47</td>
+        <td>2009/10/09</td>
+        <td>$1,200,000</td>
+      </tr>
+      <tr role="row" class="odd">
+        <td class="sorting_1">Ashton Cox</td>
+        <td>Junior Technical Author</td>
+        <td>San Francisco</td>
+        <td>66</td>
+        <td>2009/01/12</td>
+        <td>$86,000</td>
+      </tr>
+      <tr role="row" class="even">
+        <td class="sorting_1">Bradley Greer</td>
+        <td>Software Engineer</td>
+        <td>London</td>
+        <td>41</td>
+        <td>2012/10/13</td>
+        <td>$132,000</td>
+      </tr>
+      <tr role="row" class="odd">
+        <td class="sorting_1">Brenden Wagner</td>
+        <td>Software Engineer</td>
+        <td>San Francisco</td>
+        <td>28</td>
+        <td>2011/06/07</td>
+        <td>$206,850</td>
+      </tr>
+      <tr role="row" class="even">
+        <td class="sorting_1">Brielle Williamson</td>
+        <td>Integration Specialist</td>
+        <td>New York</td>
+        <td>61</td>
+        <td>2012/12/02</td>
+        <td>$372,000</td>
+      </tr>
+      <tr role="row" class="odd">
+        <td class="sorting_1">Bruno Nash</td>
+        <td>Software Engineer</td>
+        <td>London</td>
+        <td>38</td>
+        <td>2011/05/03</td>
+        <td>$163,500</td>
+      </tr>
+      <tr role="row" class="even">
+        <td class="sorting_1">Caesar Vance</td>
+        <td>Pre-Sales Support</td>
+        <td>New York</td>
+        <td>21</td>
+        <td>2011/12/12</td>
+        <td>$106,450</td>
+      </tr>
+      <tr role="row" class="odd">
+        <td class="sorting_1">Cara Stevens</td>
+        <td>Sales Assistant</td>
+        <td>New York</td>
+        <td>46</td>
+        <td>2011/12/06</td>
+        <td>$145,600</td>
+      </tr>
+      <tr role="row" class="even">
+        <td class="sorting_1">Cedric Kelly</td>
+        <td>Senior Javascript Developer</td>
+        <td>Edinburgh</td>
+        <td>22</td>
+        <td>2012/03/29</td>
+        <td>$433,060</td>
+      </tr>
+    </tbody>
+  </table>
+
+</main>
+
+<script src="../bower_components/jquery/dist/jquery.js"></script>
+<script src="../bower_components/hopscotch/dist/js/hopscotch.js"></script>
+<script src="../src/javascripts/hopscotch-highlight.js"></script>
+<script>
+  var tour = {
+    id: "hello-hopscotch",
+    steps: [
+      {
+        content: "<p>Something in your first tour bubble.</p>",
+        target: "header",
+        placement: "bottom"
+      },
+      {
+        content: "<p>Another message in a bubble.</p>",
+        target: document.querySelector('#intro'),
+        placement: "bottom"
+      },
+      {
+        content: "<p>You can also highlight a whole table column.</p>",
+        target: "office",
+        placement: "right",
+        table: "column"
+      }
+    ],
+    onNext: hopscotch.highlight.remove,
+    onEnd: hopscotch.highlight.remove,
+    onShow: hopscotch.highlight.show
+  };
+</script>
+<script>
+  // Start the tour!
+  hopscotch.startTour(tour);
+</script>
+</body>
+</html>
